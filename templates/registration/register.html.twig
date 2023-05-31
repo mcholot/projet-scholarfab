@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <html>
+        <body>
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                            <div class="card-body p-5 text-center">
+
+                                <div class="mb-md-5 mt-md-4 pb-5">
+
+                                {{ form_start(registrationForm,{'attr': {'class': 'row'}}) }}
+
+                                <h2 class="fw-bold mb-2 text-uppercase">Inscription</h2>
+                                <p class="text-white-50 mb-5">Saisissez vos informations pour créer votre compte</p>
+
+                                <div class="form-outline form-white mb-4">
+                                    {{ form_widget(registrationForm.name, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                                    <span class="error">{{ form_errors(registrationForm.name) }}</span>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    {{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                                    <span class="error">{{ form_errors(registrationForm.firstname) }}</span>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Adresse mail'}}) }}
+                                    <span class="error">{{ form_errors(registrationForm.email) }}</span>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
+                                    <span class="error">{{ form_errors(registrationForm.plainPassword.first) }}</span>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'form-control', 'placeholder': 'Confirmer le mot de passe'}}) }}
+                                    <span class="error">{{ form_errors(registrationForm.plainPassword.second) }}</span>
+                                </div>
+
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">S'inscrire</button>
+
+                                </div>
+
+                                <div>
+                                <p class="mb-0">Vous avez déjà un compte ? <a href="{{ path('login') }}" class="text-white-50 fw-bold">Se connecter</a>
+                                </p>
+                                </div>
+
+                                {{ form_end(registrationForm) }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+</div>
+{% endblock %}
