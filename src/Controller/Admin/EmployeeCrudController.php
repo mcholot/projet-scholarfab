@@ -17,14 +17,8 @@ class EmployeeCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield AssociationField::new('company', 'Société')->formatValue(function ($value, $entity) {
-            // Vérifier si la valeur est un objet Company
-            if ($value instanceof Company) {
-                // Retourner le nom de la société
-                return $value->getName();
-            }
-    
-            return $value;
-        })->autocomplete();
+            return $entity->getCompany()->getName();
+        });
 
         yield TextField::new('lastname', 'Nom');
 

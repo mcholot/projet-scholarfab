@@ -21,72 +21,73 @@
                                 <div class="row no-gutters">
                                     <div class="col-md-7 d-flex align-items-stretch">
                                         <div class="contact-wrap w-100 p-md-5 p-4">
-                                            <h3 class="mb-4 text-white">Contactez-nous</h3>
+                                            <h3 class="mb-4 text-dark text-center" style="font-family: 'Kaushan Script', cursive;">Contactez-nous</h3>
                                             <form method="POST" id="contactForm" name="contactForm" novalidate="novalidate">
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="name" id="name" placeholder="Nom">
+                                                    {{ form_start(form) }}
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.name) }}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.email) }}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.subject) }}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <textarea name="message" class="form-control" id="message" cols="30" rows="7" placeholder="Message"></textarea>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.message) }}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <input type="submit" value="Envoyer le message" class="btn btn-primary">
-                                                            <div class="submitting"></div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.submit) }}
+                                                                <div class="submitting"></div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    {{ form_end(form) }}
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                     <div class="col-md-5 d-flex align-items-stretch">
-                                        <div class="info-wrap bg-dark w-100 p-lg-5 p-4" style="border-radius: 2rem;">
-                                            <h3 class="mb-4 mt-md-4 text-white">Nos coordonnées :</h3>
+                                        <div class="info-wrap w-100 p-lg-5 p-4" style="border-radius: 1rem;">
+                                            <h3 class="mb-4 mt-md-4 text-dark text-center" style="font-family: 'Kaushan Script', cursive;">Nos coordonnées :</h3>
                                             <div class="dbox w-100 d-flex align-items-start">
-                                                <div class="icon d-flex align-items-center justify-content-center">
+                                                {# <div class="icon d-flex align-items-center justify-content-center">
                                                     <i class="fas fa-map-marker"></i>
-                                                </div>
-                                                <div class="text pl-3 text-white">
+                                                </div> #}
+                                                <div class="text pl-3 text-dark">
                                                     <p>
-                                                        <span>Adresse :</span>
+                                                        <span class="fas fa-map-marker">  Adresse :</span>
                                                         7 Rue Professeur Joseph Rousselot, 14000 Caen
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="dbox w-100 d-flex align-items-center">
-                                                <div class="icon d-flex align-items-center justify-content-center">
-                                                    <span class="fa fa-phone"></span>
-                                                </div>
-                                                <div class="text-pl-3 text-white">
+                                                <div class="text-pl-3 text-dark">
                                                     <p>
-                                                        <span>Téléphone :</span>
-                                                        <a href="tel://1234567920" class="text-white">01 23 45 67 89</a>
+                                                        <span class="fa fa-phone">  Téléphone :</span>
+                                                        <a href="tel://1234567920" class="text-dark">01 23 45 67 89</a>
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="dbox w-100 d-flex align-items-center">
-                                                <div class="icon d-flex align-items-center justify-content-center">
-                                                    <span class="fa fa-paper-plane"></span>
-                                                </div>
-                                                <div class="text-pl-3 text-white">
+                                                <div class="text-pl-3 text-dark">
                                                     <p>
-                                                        <span>Email :</span>
-                                                        <a href="mailto:contact@faudra-tif-hair.fr" class="text-white">contact@faudra-tif-hair.fr</a>
+                                                        <span class="fa fa-paper-plane">  Horaires :</span>
+                                                            <li>Lundi : 9h-19h</li>
+                                                            <li>Mardi : 9h-19h</li>
+                                                            <li>Mercredi : 9h-19h</li>
+                                                            <li>Jeudi : 9h-19h</li>
+                                                            <li>Vendredi : 9h-19h</li>
+                                                            <li>Samedi : 10h-18h</li>
                                                     </p>
                                                 </div>
                                             </div>

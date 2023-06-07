@@ -63,22 +63,22 @@
     <html>
         <body>
             <div class="container py-3">
-                <div class="row text-center text-black">
-                    <div class="col-lg-4 mx-auto text-white" style="border-radius: 1rem;">
-                        <h1 class="mb-4">Carte des services</h1>
+                <div class="row text-center text-dark">
+                    <div class="col-lg-4 mx-auto" style="border-radius: 1rem;">
+                        <h1 class="mb-4" style="font-family: 'Kaushan Script', cursive;">Carte des services</h1>
                     </div>
                 </div>
             </div>
 
-            <div class="container mt-2 bg-dark" align="center" style="border-radius: 1rem;">
+            <div class="container mt-2" align="center" style="border-radius: 1rem;">
                 {% for category, services in groupedServices %}
-                    <h3 class="mb-4 text-white">{{ category }} :</h3>
-                    <div class="row justify-content-center">
+                    <h3 class="mb-4 text-dark" style="font-family: 'Monoton', cursive;">{{ category }} :</h3>
+                    <div class="row justify-content-center mb-4">
                         {% for service in services %}
                             <div class="col-md-3 col-sm-6">
-                                <div class="card card-block">
-                                    <h5 class="card-title mt-3 mb-3">{{ service.name }}</h5>
-                                    <p class="card-text">
+                                <div class="card card-block bg-dark">
+                                    <h5 class="card-title mt-3 mb-3 text-white">{{ service.name }}</h5>
+                                    <p class="card-text text-white">
                                         Prix : {{ service.price }}
                                         <br>
                                         Temps : {{ service.time|date('H:i') }}

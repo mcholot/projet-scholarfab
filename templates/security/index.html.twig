@@ -9,28 +9,28 @@
         <body>
             <main class="form-signin w-100 m-auto">
                 <div class="container mt-2" align="center">
-                    <div class="container w-25 bg-dark" style="border-radius: 1rem;">
-                        <h1 class="h3 mb-3 fw-normal text-white">Profil de {{ user.name|capitalize }} :</h1>
+                    <div class="container w-25" style="border-radius: 1rem;">
+                        <h1 class="h3 mb-3 fw-normal text-dark" style="font-family: 'Kaushan Script', cursive;">Profil de {{ user.name|capitalize }} :</h1>
                         <form>
                             <div class="col-12">
-                                <label for="name" class="form-label text-white">Nom :</label>
+                                <label for="name" class="form-label text-dark">Nom :</label>
                                 <div class="mb-3">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="name" value="{{ user.name }}" readonly>
+                                        <input type="text" class="form-control text-center" id="name" value="{{ user.name }}" readonly>
                                     </div>
                                 </div>
 
-                                <label for="fisrtname" class="form-label text-white">Prénom :</label>
+                                <label for="fisrtname" class="form-label text-dark">Prénom :</label>
                                 <div class="mb-3">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="firstname" value="{{ user.firstname }}" readonly>
+                                        <input type="text" class="form-control text-center" id="firstname" value="{{ user.firstname }}" readonly>
                                     </div>
                                 </div>
 
-                                <label for="email" class="form-label text-white">Adresse mail :</label>
+                                <label for="email" class="form-label text-dark">Adresse mail :</label>
                                 <div class="mb-3">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="email" value="{{ user.email }}" readonly>
+                                        <input type="text" class="form-control text-center" id="email" value="{{ user.email }}" readonly>
                                     </div>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Faudra Tif Hair - {% block title %}{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/barber-pole.gif') }}">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -35,7 +36,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                    <a class="navbar-brand col-lg-3 me-0" href="{{ path('home') }}">Faudra Tif Hair</a>
+                    <a class="navbar-brand col-lg-3 me-0 custom-brand">
+                        <span>Faudra Tif Hair</span>
+                        <div class="clickable-image" style="display: inline-block" onclick="redirectToPage('{{ path('blank') }}');">
+                            <img src="{{ asset('img/barber-pole.gif') }}" alt="Barber Pole" style="height: 70px;">
+                        </div>
+                    </a>
                     <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Accueil</a>
@@ -72,6 +78,11 @@
                                     <li>
                                         <a class="dropdown-item" href="{{ path('my_reservations', { name: app.user.name }) }}">Mes réservations</a>
                                     </li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li class="nav-item">
+                                            <a class="dropdown-item" href="{{ path('messages') }}">Liste des messages</a>
+                                        </li>
+                                    {% endif %}
                                     <li>
                                         <a class="dropdown-item" href="{{ path('logout') }}">Déconnexion</a>
                                     </li>
@@ -84,6 +95,11 @@
             </div>
         </nav>
     </main>
+    <script>
+        function redirectToPage(url) {
+            window.location.href = url;
+        }
+    </script>
     </body>
     {% block body %}{% endblock %}
     <footer class="footer bg-light text-center text-lg-start">

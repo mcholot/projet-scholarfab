@@ -2,17 +2,29 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\EmployeeRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EquipeController extends AbstractController
 {
-    #[Route('/staff', name: 'equipe')]
-    public function index(): Response
+    private $employeeRepository;
+
+    public function __construct(EmployeeRepository $employeeRepository)
     {
+        $this->employeeRepository = $employeeRepository;
+    }
+
+    #[Route('/staff', name: 'equipe')]
+    public function index(ManagerRegistry $doctrine): Response
+    {
+        // Récupérer tous les membres de l'équipe dans la base de données
+        $equipes = $this->employeeRepository->findAll();
+
         return $this->render('equipe/index.html.twig', [
-            'controller_name' => 'EquipeController',
+            'equipes' => $equipes,
         ]);
     }
 }

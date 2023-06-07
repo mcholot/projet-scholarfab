@@ -10,60 +10,20 @@
             <div class="container py-5">
                 <div class="row text-center text-black">
                     <div class="col-lg-8 mx-auto">
-                        <h1 class="mb-4 text-white">Equipe</h1>
+                        <h1 class="mb-4 text-dark" style="font-family: 'Kaushan Script', cursive;">Equipe</h1>
                     </div>
                 </div>
             </div>
 
             <div class="container">
                 <div class="row text-center">
-                    <div class="col-xl-3 col-sm-6 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('img/staff.svg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Matthieu CHOLOT</h5><span class="small text-uppercase text-muted">Développeur</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                    {% for equipe in equipes %}
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img src="{{ asset('img/staff.svg') }}" alt="staff" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0 text-white">{{ equipe.lastName }} {{ equipe.firstName }}</h5><span class="small text-uppercase text-muted text-white">{{ equipe.description }}</span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-3 col-sm-6 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('img/staff.svg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Matthieu DANNEELS</h5><span class="small text-uppercase text-muted">Développeur</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-sm-6 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('img/staff.svg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Corentin BERTHELOT</h5><span class="small text-uppercase text-muted">Réseau</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-sm-6 mb-5">
-                        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('img/staff.svg') }}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                            <h5 class="mb-0">Kévin LEBOISSELIER</h5><span class="small text-uppercase text-muted">Réseau</span>
-                            <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </body>

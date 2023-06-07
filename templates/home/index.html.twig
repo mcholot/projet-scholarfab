@@ -7,43 +7,36 @@
 <div class="content-wrapper">
     <html>
         <body>
-            <div style="background: url('{{ asset('img/banner.jpg') }}'); background-size: cover; background-position: center;" class="jumbotron bg-cover text-white">
-                <div class="container py-5 text-center">
-                    <h1 class="display-4 font-weight-bold">Faudra Tif Hair</h1>
-                    <p class="font-italic mb-0">Salon de coiffure</p>
+            <div class="banner" style="background: url('{{ asset('img/banner.jpg') }}'); background-size: cover; background-position: center; padding: 8px 0;" class="jumbotron bg-cover text-white">
+                <div class="container py-5 text-center" style="border-radius:16px; background-color: rgba(0, 0, 0, 0.3); width: 30%;">
+                    <h1 class="display-4 font-weight-bold text-white">Faudra Tif Hair</h1>
+                    <p class="font-italic mb-0 text-white">Salon de coiffure</p>
                 </div>
             </div>
-            <div class="row mt-5 text-center bg-dark text-white" style="border-radius: 1rem;">
-                <h3>FAUDRA-TIF-HAIR</h3>
-                <p>
-                    Votre salon de coiffure et Barbershop !
-                </p>
+            <div class="row mt-5 text-center text-dark" style="font-family: 'Montserrat', sans-serif;">
                 <p>
                     Notre équipe de coiffeurs barbiers sera très ravie de vous accueillir à l’abri des regards pour vous proposer une large gamme de prestations allant de la simple coupe de cheveux au rasage à l'ancienne en passant par les soins visage et les colorations.
                 </p>
-                <p>
-                    Confiez votre chevelure ou votre barbe et c’est la garantie d’un look qui sublimera votre apparence ! Barbershop, coiffeur, tendance et bien plus encore à venir découvrir.
-                </p>
 
                 <div class="col-lg-6">
-                    <h3>CÔTÉ COIFFURE :</h3>
-                        <p>Que ce soit pour une simple coupe, des mèches ou un défrisage, nos coiffeurs, spécialistes de la coiffure masculine, sauront réaliser une coiffure qui vous ressemble, tout à fait à votre image et en parfaite harmonie avec votre style et votre personnalité.</p>
-                        <p>Nos coiffeurs seront également ravis de partager avec vous leurs conseils d'experts du cheveu. Ils sauront vous aider à choisir :</p>
-                        <ul>
-                            <li>La coupe la plus adaptée à la forme de votre visage ainsi qu'à votre morphologie</li>
-                            <li>La couleur qu'il vous faut pour des mèches qui illuminent votre visage et qui mettent en valeur votre teint</li>
-                            <li>Les produits capillaires à utiliser pour le shampoing ou pour les soins en fonction de la nature de vos cheveux</li>
-                        </ul>
+                    <div class="image-container text-center">
+                        <img src="{{ asset('img/hairdress.jpg') }}" alt="Côté Coiffure" class="img-hairdress">
+                    </div>
+                    <br>
+                    <h3 style="font-family: 'Monoton', cursive;">CÔTÉ COIFFURE :</h3>
+                    <p>
+                        Découvrez notre expertise en matière de coiffure. Nos coiffeurs talentueux et passionnés sauront vous conseiller et vous offrir une coupe de cheveux tendance et adaptée à votre style.
+                    </p>
                 </div>
                 <div class="col-lg-6">
-                    <h3>CÔTÉ BARBER :</h3>
-                        <p>Au bout du blaireau, du rasoir, des ciseaux, de la tondeuse...</p>
-                        <p>Une lame bien aiguisée, des mains habiles, une créativité à toute épreuve et le goût du travail parfaitement exécuté, nos barbiers arrivent à vous assurer le résultat souhaité. Ils vous proposent différentes prestations, à savoir :</p>
-                        <ul>
-                            <li>Taille de barbe, traçage, rasage à l'ancienne</li>
-                            <li>Teinte de barbe</li>
-                            <li>Soin de barbe</li>
-                        </ul>
+                    <div class="image-container text-center">
+                        <img src="{{ asset('img/barber.jpg') }}" alt="Côté Barber" class="img-barber">
+                    </div>
+                    <br>
+                    <h3 style="font-family: 'Monoton', cursive;">CÔTÉ BARBER :</h3>
+                    <p>
+                        Plongez dans l'univers du barbering avec notre équipe de barbiers experts. Profitez d'un rasage précis à l'ancienne, de soins de la barbe de qualité et de conseils personnalisés pour entretenir votre barbe avec style.
+                    </p>
                 </div>
                 <div class="text-center p-3">
                     N'hésitez pas à nous contacter pour tout complément d'information ou prise de rendez-vous !

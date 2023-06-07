@@ -20,8 +20,8 @@ class Reservation
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $hour = null;
+    #[ORM\Column(type: "string")]
+    private $hour = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     #[ORM\JoinColumn(nullable: false)]
@@ -56,12 +56,12 @@ class Reservation
         return $this;
     }
 
-    public function getHour(): ?\DateTimeInterface
+    public function getHour(): ?string
     {
         return $this->hour;
     }
 
-    public function setHour(\DateTimeInterface $hour): self
+    public function setHour(string $hour): self
     {
         $this->hour = $hour;
 
