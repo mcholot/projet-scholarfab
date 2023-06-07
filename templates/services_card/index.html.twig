@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte des services{% endblock %}
+
+{% block body %}
+<style>
+    div [class^="col-"]{
+        padding-left:5px;
+        padding-right:5px;
+    }
+    .card{
+        transition:0.5s;
+        cursor:pointer;
+    }
+    .card-title{  
+        font-size:15px;
+        transition:1s;
+        cursor:pointer;
+    }
+    .card-title i{  
+        font-size:15px;
+        transition:1s;
+        cursor:pointer;
+        color:#ffa710
+    }
+    .card-title i:hover{
+        transform: scale(1.25) rotate(100deg); 
+        color:#18d4ca;
+
+    }
+    .card:hover{
+        transform: scale(1.05);
+        box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    }
+    .card-text{
+        height:80px;  
+    }
+
+    .card::before, .card::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale3d(0, 0, 1);
+        transition: transform .3s ease-out 0s;
+        background: rgba(255, 255, 255, 0.1);
+        content: '';
+        pointer-events: none;
+    }
+    .card::before {
+        transform-origin: left top;
+    }
+    .card::after {
+        transform-origin: right bottom;
+    }
+        .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+        transform: scale3d(1, 1, 1);
+    }
+</style>
+
+<div class="content-wrapper">
+    <html>
+        <body>
+            <div class="container py-3">
+                <div class="row text-center text-dark">
+                    <div class="col-lg-4 mx-auto" style="border-radius: 1rem;">
+                        <h1 class="mb-4" style="font-family: 'Kaushan Script', cursive;">Carte des services</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-2" align="center" style="border-radius: 1rem;">
+                {% for category, services in groupedServices %}
+                    <h3 class="mb-4 text-dark" style="font-family: 'Monoton', cursive;">{{ category }} :</h3>
+                    <div class="row justify-content-center mb-4">
+                        {% for service in services %}
+                            <div class="col-md-3 col-sm-6">
+                                <div class="card card-block bg-dark">
+                                    <h5 class="card-title mt-3 mb-3 text-white">{{ service.name }}</h5>
+                                    <p class="card-text text-white">
+                                        Prix : {{ service.price }}
+                                        <br>
+                                        Temps : {{ service.time|date('H:i') }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </body>
+    </html>
+</div>
+{% endblock %}

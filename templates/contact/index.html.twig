@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <html>
+        <body>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="row justify-content-center"></div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-md-12">
+                            <div class="wrapper">
+                                <div class="row no-gutters">
+                                    <div class="col-md-7 d-flex align-items-stretch">
+                                        <div class="contact-wrap w-100 p-md-5 p-4">
+                                            <h3 class="mb-4 text-dark text-center" style="font-family: 'Kaushan Script', cursive;">Contactez-nous</h3>
+                                            <form method="POST" id="contactForm" name="contactForm" novalidate="novalidate">
+                                                <div class="row">
+                                                    {{ form_start(form) }}
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.name) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.email) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.subject) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.message) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                {{ form_widget(form.submit) }}
+                                                                <div class="submitting"></div>
+                                                            </div>
+                                                        </div>
+                                                    {{ form_end(form) }}
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 d-flex align-items-stretch">
+                                        <div class="info-wrap w-100 p-lg-5 p-4" style="border-radius: 1rem;">
+                                            <h3 class="mb-4 mt-md-4 text-dark text-center" style="font-family: 'Kaushan Script', cursive;">Nos coordonnées :</h3>
+                                            <div class="dbox w-100 d-flex align-items-start">
+                                                {# <div class="icon d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-map-marker"></i>
+                                                </div> #}
+                                                <div class="text pl-3 text-dark">
+                                                    <p>
+                                                        <span class="fas fa-map-marker">  Adresse :</span>
+                                                        7 Rue Professeur Joseph Rousselot, 14000 Caen
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="dbox w-100 d-flex align-items-center">
+                                                <div class="text-pl-3 text-dark">
+                                                    <p>
+                                                        <span class="fa fa-phone">  Téléphone :</span>
+                                                        <a href="tel://1234567920" class="text-dark">01 23 45 67 89</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="dbox w-100 d-flex align-items-center">
+                                                <div class="text-pl-3 text-dark">
+                                                    <p>
+                                                        <span class="fa fa-paper-plane">  Horaires :</span>
+                                                            <li>Lundi : 9h-19h</li>
+                                                            <li>Mardi : 9h-19h</li>
+                                                            <li>Mercredi : 9h-19h</li>
+                                                            <li>Jeudi : 9h-19h</li>
+                                                            <li>Vendredi : 9h-19h</li>
+                                                            <li>Samedi : 10h-18h</li>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+</div>
+{% endblock %}
+
+

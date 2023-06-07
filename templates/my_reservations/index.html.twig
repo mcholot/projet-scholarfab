@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes réservations{% endblock %}
+
+{% block body %}
+
+<div class="content-wrapper">
+    <html>
+        <body>
+            <main class="form-signin w-100 m-auto">
+                <div class="container">
+                    <div class="container py-3 h-100 text-dark" style="border-radius: 1rem;">
+                        <h1 class="h3 mb-3 fw-normal text-center text-dark" style="font-family: 'Kaushan Script', cursive;">Mes réservations :</h1>
+                        <br>
+                        <table class="table table-striped table-bordered border-dark">
+                            <thead>
+                                <tr>
+                                    <th class="text-center text-dark">Date</th>
+                                    <th class="text-center text-dark">Heure</th>
+                                    <th class="text-center text-dark">Coiffeur</th>
+                                    <th class="text-center text-dark">Service</th>
+                                    <th class="text-center text-dark">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for r in reservations %}
+                                <tr>
+                                    <td class="text-center text-dark">{{ r.date|date('d/m/Y') }}</td>
+                                    <td class="text-center text-dark">{{ r.hour|date('H:i') }}</td>
+                                    <td class="text-center text-dark">{{ r.employee.lastName ~ ' ' ~ r.employee.firstName }}</td>
+                                    <td class="text-center text-dark">{{ r.services.category ~ ' - ' ~ r.services.name }}</td>
+                                    <td class="text-center text-dark">
+                                        <a href="{{ path('edit_reservation', {'id': r.id, name: app.user.name }) }}" class="btn btn-primary">Modifier</a>
+                                        <a href="{{ path('cancel_reservation', {'id': r.id }) }}" class="btn btn-danger">Annuler</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </body>
+    </html>
+</div>
+
+{% endblock %}

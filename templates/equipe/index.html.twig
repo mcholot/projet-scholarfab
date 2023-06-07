@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe{% endblock %}
+
+{% block body %}
+
+<div class="content-wrapper">
+    <html>
+        <body>
+            <div class="container py-5">
+                <div class="row text-center text-black">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="mb-4 text-dark" style="font-family: 'Kaushan Script', cursive;">Equipe</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row text-center">
+                    {% for equipe in equipes %}
+                        <div class="col-xl-3 col-sm-6 mb-5">
+                            <div class="bg-dark rounded shadow-sm py-5 px-4"><img src="{{ asset('img/staff.svg') }}" alt="staff" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0 text-white">{{ equipe.lastName }} {{ equipe.firstName }}</h5><span class="small text-uppercase text-muted text-white">{{ equipe.description }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </body>
+    </html>
+</div>
+{% endblock %}
