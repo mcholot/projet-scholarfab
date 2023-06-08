@@ -32,6 +32,7 @@ class ServicesCardController extends AbstractController
             $groupedServices[$category][] = $service;
         }
 
+        // Retourner vers la vue des services avec tous les éléments de l'entité service
         return $this->render('services_card/index.html.twig', [
             'groupedServices' => $groupedServices,
         ]);

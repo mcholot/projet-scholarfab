@@ -23,6 +23,7 @@ class EquipeController extends AbstractController
         // Récupérer tous les membres de l'équipe dans la base de données
         $equipes = $this->employeeRepository->findAll();
 
+        // Retourner vers la vue équipe avec tous les membres de l'entité équipe
         return $this->render('equipe/index.html.twig', [
             'equipes' => $equipes,
         ]);

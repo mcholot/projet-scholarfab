@@ -54,9 +54,10 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('login');
         }
         try{
+            // Récupérer tous les messages de l'entité contact
             $contacts = $contactRepo->findAll();
 
-
+            // Retourner vers la vue de tous les messages
             return $this->render('contact/messages_list.html.twig', [
                 'contacts' => $contacts,
             ]);
@@ -94,6 +95,7 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('login');
         }
 
+        // Gérer la suppression d'un message
         $form = $this->createFormBuilder()
             ->setAction($this->generateUrl('delete_message', ['id' => $contact->getId()]))
             ->setMethod('DELETE')
@@ -102,7 +104,7 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Supprimer la réservation en base de données
+            // Supprimer le message en base de données
             $entityManager->remove($contact);
             $entityManager->flush();
 
@@ -110,7 +112,7 @@ class ContactController extends AbstractController
             return $this->redirectToRoute('messages');
         }
 
-        // Gérer l'annulation de la réservation
+        // Retourner vers la page de suppression d'un message
         return $this->render('contact/delete_message.html.twig', [
             'form' => $form->createView(),
             'contact' => $contact

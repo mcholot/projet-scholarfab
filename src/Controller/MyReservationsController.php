@@ -25,12 +25,14 @@ class MyReservationsController extends AbstractController
             return $this->redirectToRoute('login');
         }
         try{
+            // Récupérer la ou les réservations de l'utilisateur connecté
             $reservations = $reservationRepo->createQueryBuilder('r')
                 ->innerJoin('r.user', 'u')
                 ->where ('u.id = :id')
                 ->setParameter ('id',$this->getUser())
                 ->getQuery();
             $result = $reservations->getResult();
+            // Retourner vers la vue avec les réservations de l'utilisateur
             return $this->render('my_reservations/index.html.twig', [
                 'reservations' => $result,
                 'user' => $user
@@ -62,6 +64,7 @@ class MyReservationsController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
+        // Retourner vers la vue de modification d'une réservation de l'utilisateur
         return $this->render('my_reservations/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView()
@@ -77,6 +80,7 @@ class MyReservationsController extends AbstractController
             return $this->redirectToRoute('login');
         }
 
+        // Gérer la suppression de la réservation de l'utilisateur
         $form = $this->createFormBuilder()
             ->setAction($this->generateUrl('cancel_reservation', ['id' => $reservation->getId()]))
             ->setMethod('DELETE')
@@ -93,7 +97,7 @@ class MyReservationsController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        // Gérer l'annulation de la réservation
+        // Retourner vers la vue de la suppression d'une réservation
         return $this->render('my_reservations/cancel.html.twig', [
             'form' => $form->createView(),
             'reservation' => $reservation
